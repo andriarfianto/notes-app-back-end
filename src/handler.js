@@ -6,8 +6,8 @@ const addNoteHandler = (request, h) => {
   
   const id = nanoid(16);
   const createdAt = new Date().toISOString();
-  const updateAt = createdAt;
-  const newNote = { title, tags, body, id, createdAt, updateAt }
+  const updatedAt = createdAt;
+  const newNote = { title, tags, body, id, createdAt, updatedAt }
   
   notes.push(newNote);
   
@@ -77,7 +77,7 @@ const editNoteByIdHandler = (request, h) => {
       title,
       tags,
       body,
-      updateAt,
+      updatedAt,
     };
     
     const response = h.response({
